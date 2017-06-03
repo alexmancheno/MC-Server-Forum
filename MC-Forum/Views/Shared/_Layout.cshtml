@@ -43,41 +43,48 @@
     <link rel="stylesheet" href="./styles/ravaio/theme/stylesheet.min.css?assets_version=174">
 
     <style>
-.site_logo {
-	background-image: url("./ext/gramziu/ravaio/assets/site_logo.svg");
-	height: 36px;
-	width: 26px;
-}
-.dropdown-profile {
-	left: 148px;
-}
-.rtl .dropdown-profile {
-	left: auto;
-	right: 148px;
-}
+        .site_logo {
+            background-image: url("./ext/gramziu/ravaio/assets/site_logo.svg");
+            height: 36px;
+            width: 26px;
+        }
 
-.post-actions {
-	clear: both;
-}
-#back-to-top.btt-docked {
-	bottom: auto;
-	position: absolute;
-	top: -18px;
-}
-.is-sticky #wrap-header,
-.is-sticky #wrap-header-index {
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.42);
-}
-.anchor {
-	margin-top: -56px;
-	padding-top: 56px;
-}
-#site-desc-full, #site-desc-small {
-    background-image: url("./ext/gramziu/ravaio/assets/ra_head_index_img_0.png");
-}
-#sub-header {
-	background-image: url("./ext/gramziu/ravaio/assets/ra_head_other_img_0.png");
-}
+        .dropdown-profile {
+            left: 148px;
+        }
+
+        .rtl .dropdown-profile {
+            left: auto;
+            right: 148px;
+        }
+
+        .post-actions {
+            clear: both;
+        }
+
+        #back-to-top.btt-docked {
+            bottom: auto;
+            position: absolute;
+            top: -18px;
+        }
+
+        .is-sticky #wrap-header,
+        .is-sticky #wrap-header-index {
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.42);
+        }
+
+        .anchor {
+            margin-top: -56px;
+            padding-top: 56px;
+        }
+
+        #site-desc-full, #site-desc-small {
+            background-image: url("./ext/gramziu/ravaio/assets/ra_head_index_img_0.png");
+        }
+
+        #sub-header {
+            background-image: url("./ext/gramziu/ravaio/assets/ra_head_other_img_0.png");
+        }
     </style>
     <style>
         #theme-variant-0:before {
@@ -101,10 +108,10 @@
 
     <script>
         (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-73438105-1', 'auto');
@@ -113,7 +120,6 @@
 
 </head>
 <body id="phpbb" class="nojs notouch section-index ltr ">
-
     <div id="wrap">
         <div id="wrap-inner">
             <a id="top" class="anchor" accesskey="t"></a>
@@ -122,7 +128,6 @@
                     <a id="logo" href="./index.php?style=6" title="Board index"><span class="imageset site_logo"></span></a>
                     <nav>
                         <ul class="site-nav">
-
                             <li class="re-md-r">
                                 <a href="#" class="w-drop" data-toggle="dropdown">Menu</a>
                                 <ul class="dropdown-box">
@@ -780,7 +785,7 @@
         });
 
     </script>
-
+    @RenderSection("scripts", required: false)
     <script type="text/javascript" src="~/Content/js/collapsiblecategories.js?assets_version=174"></script>
 
     <script type="text/javascript" src="~/Content/js/boardannouncements.js?assets_version=174"></script>
