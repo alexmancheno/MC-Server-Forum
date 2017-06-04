@@ -16,10 +16,6 @@
     <link href="~/Content/css/boardannouncements.css?assets_version=174" rel="stylesheet" type="text/css" media="screen" />
     <link href="~/Content/css/collapsiblecategories.css?assets_version=174" rel="stylesheet" type="text/css" media="screen" />
 
-    <!--
-        Style name: Ravaio
-        Author: Gramziu
-    -->
 
     <script>
         WebFontConfig = {
@@ -120,159 +116,20 @@
 
 </head>
 <body id="phpbb" class="nojs notouch section-index ltr ">
-    <div id="wrap">
-        <div id="wrap-inner">
+    <div id="wrap" >
+        <div id="wrap-inner" >
             <a id="top" class="anchor" accesskey="t"></a>
-            <div id="wrap-header-index">
+            <div id="wrap-header-index" style="background-color: #455a64">
                 <div class="site-header chunk">
                     <a id="logo" href="./index.php?style=6" title="Board index"><span class="imageset site_logo"></span></a>
                     <nav>
                         <ul class="site-nav">
-                            <li class="re-md-r">
-                                <a href="#" class="w-drop" data-toggle="dropdown">Menu</a>
-                                <ul class="dropdown-box">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-tachometer"></i>
-                                            Example
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="w-drop">
-                                            <i class="fa fa-tachometer"></i>
-                                            Example
-                                        </a>
-                                        <ul class="dropdown-box">
-                                            <li>
-                                                <a href="#" class="w-drop">
-                                                    <i class="fa fa-tachometer"></i>
-                                                    Example
-                                                </a>
-                                                <ul class="dropdown-box">
-                                                    <li>
-                                                        <a href="#">
-                                                            <i class="fa fa-tachometer"></i>
-                                                            Example
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-tachometer"></i>
-                                                    Example
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">
-                                                    <i class="fa fa-tachometer"></i>
-                                                    Example
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-tachometer"></i>
-                                            Example
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="re-md-r static">
-                                <a href="#" class="w-drop" data-toggle="dropdown"><i class="fa fa-shopping-basket"></i><span>Menu #2</span></a>
-                                <div class="dropdown-mega">
-                                    <div class="chunk-inner">
-                                        <div class="chunk-25">
-                                            <h6>Your title</h6>
-                                            <p>
-                                                Here you can see mega dropdown example!
-                                                <br><br>
-                                                It can acts like a normal space and it supports site grid.
-                                            </p>
-                                        </div>
-                                        <div class="chunk-25">
-                                            <h6>Your title</h6>
-                                            <img src="http://gramziu.pl/images/buy_it.png" alt="Buy it now!" style="border-radius: 2px; display: block;">
-                                        </div>
-                                        <div class="chunk-25">
-                                            <h6>Your title</h6>
-                                            <ul>
-                                                <li>
-                                                    <a href="#" title="First dropdown item">First dropdown item</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Second dropdown item">
-                                                        <i class="fa fa-rocket"></i>
-                                                        Second dropdown item
-                                                    </a>
-                                                </li>
-                                                <ul>
-                                                    <button class="button">Example</button>
-                                                    <button class="button-flat">Example</button>
-                                                    <button class="button-round"><i class="fa fa-bomb"></i></button>
-                                        </div>
-                                        <div class="chunk-25">
-                                            <h6>Your title</h6>
-                                            <ul>
-                                                <li>
-                                                    <a href="#" title="First dropdown item">First dropdown item</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Second dropdown item">
-                                                        <i class="fa fa-rocket"></i>
-                                                        Second dropdown item
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Second dropdown item">
-                                                        <i class="fa fa-rocket"></i>
-                                                        Second dropdown item
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Second dropdown item">
-                                                        <i class="fa fa-rocket"></i>
-                                                        Second dropdown item
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Second dropdown item">
-                                                        <i class="fa fa-rocket"></i>
-                                                        Second dropdown item
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" title="Second dropdown item">
-                                                        <i class="fa fa-rocket"></i>
-                                                        Second dropdown item
-                                                    </a>
-                                                </li>
-                                                <ul>
-                                        </div>
-                                    </div>
-                                    <div class="chunk">
-                                        <div class="info-box">
-                                            Mega Menu Info Box
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-
-
                             <li>
-                                <span title="Login" accesskey="x" data-toggle="modal" data-target="#quick-login">Login</span>
+                                @Html.ActionLink("Login", "Login", "Account")
                             </li>
                             <li>
-                                <a href="./ucp.php?style=6&amp;mode=register">Register</a>
+                                @Html.ActionLink("Register", "Register", "Account")
                             </li>
-
-
-
-
                             <li id="main-search-box" class="re-md-r">
                                 <a data-toggle="dropdown" class="w-drop" href="./search.php?style=6"><i class="fa fa-search"></i></a>
                                 <div class="dropdown-search">
@@ -449,7 +306,7 @@
 
                         </ul>
 
-                        <ul id="breadcrumbs" class="bread-normal"><li><a href="./index.php?style=6" accesskey="h" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-navbar-reference="index">Board index</a></li></ul>
+                        <ul id="breadcrumbs" class="bread-normal"><li>@Html.ActionLink("Board Index", "Index", "Home")</li></ul>
                     </nav>
                 </div>
             </div>
@@ -463,7 +320,7 @@
 
             <div id="wrap-footer">
 
-                <a id="back-to-top" href="#phpbb"><i class="fa fa-angle-up"></i></a>
+                @*<a id="back-to-top" href="#phpbb"><i class="fa fa-angle-up"></i></a>*@
                 <div class="chunk-inner">
                     <div class="chunk-25 rc-posts">
                         <a href="./viewtopic.php?style=6&amp;p=77#p77" class="rc-link">

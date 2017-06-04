@@ -3,8 +3,6 @@
 }
 
 <div id="page-body" role="main">
-
-
     <div id="site-desc-full">
         <div class="chunk">
             <div id="page-description">
@@ -15,15 +13,14 @@
     </div>
 
     <div id="main-index" class="background-main">
-
+        @if (Session["UserId"] != null)
+        {
         <div class="chunk">
             <div id="phpbb_announcement" class="box-normal">
-                <a href="/phpBB/app.php/boardannouncements/close?hash=4aae9dea&amp;style=6" data-ajax="close_announcement" data-overlay="false" class="close clearfix" title="Close announcement">
-                    <i class="fa fa-times"></i>
-                </a>			Username: Sample<br />Password: demodemo
+                Hello, @Session["Username"].ToString()
             </div>
         </div>
-
+        }
         <div class="chunk">
 
             <div class="forumlist-main">

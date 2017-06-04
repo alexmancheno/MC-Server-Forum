@@ -34,7 +34,7 @@ namespace MC_Forum.Controllers
                     db.SaveChanges();
                 }
                 ModelState.Clear();
-                ViewBag.Message = account.FirstName + " " + account.LastName + " successfully registered.";
+                return RedirectToAction("Login", "Account");
             }
             return View();
         }
