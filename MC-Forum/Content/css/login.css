@@ -1,10 +1,4 @@
-﻿html,
-body {
-    background: #efefef;
-    padding: 10px;
-    font-family: 'Varela Round';
-}
-/*=== 2. Anchor Link ===*/
+﻿/*=== 2. Anchor Link ===*/
 a {
     color: #aaaaaa;
     transition: all ease-in-out 200ms;

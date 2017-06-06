@@ -9,7 +9,6 @@
 
     <link rel="alternate" type="application/atom+xml" title="Feed - Gramziu Themes" href="http://gramziu.pl/phpBB/feed.php">
     <link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="http://gramziu.pl/phpBB/feed.php?mode=topics">
-
     <link rel="stylesheet" href="~/Content/css/stylesheet.min.css?assets_version=174">
     <link rel="stylesheet" href="~/Content/css/colors.min.css">
     <link href="~/Content/css/lastpostavatar.css?assets_version=174" rel="stylesheet" type="text/css" media="screen" />
@@ -115,7 +114,7 @@
     </script>
 
 </head>
-<body id="phpbb" class="nojs notouch section-index ltr ">
+<body id="phpbb" class="nojs notouch section-index ltr " style="padding: 0px 0px">
     <div id="wrap" >
         <div id="wrap-inner" >
             <a id="top" class="anchor" accesskey="t"></a>
@@ -124,12 +123,26 @@
                     <a id="logo" href="./index.php?style=6" title="Board index"><span class="imageset site_logo"></span></a>
                     <nav>
                         <ul class="site-nav">
+                         @if (Session["UserId"] == null)
+                         {
                             <li>
                                 @Html.ActionLink("Login", "Login", "Account")
                             </li>
                             <li>
                                 @Html.ActionLink("Register", "Register", "Account")
                             </li>
+                         }
+                         else
+                         {
+
+                            <li class="re-md-r">
+                                <a href="#" class="w-drop" data-toggle="dropdown">@Session["Username"].ToString()</a>
+                                <ul class="dropdown-box">
+                                    <li>@Html.ActionLink("View Profile", "Profile", "Account")</li>
+                                    <li>@Html.ActionLink("Logout", "LogOut", "Account")</li>
+                                </ul>
+                            </li>
+                         }
                             <li id="main-search-box" class="re-md-r">
                                 <a data-toggle="dropdown" class="w-drop" href="./search.php?style=6"><i class="fa fa-search"></i></a>
                                 <div class="dropdown-search">
@@ -312,6 +325,52 @@
             </div>
 
             @RenderBody()
+
+            <div class="background-deep">
+                <div class="chunk">
+
+                    <div id="footer-custom">
+
+                        <div class="stat-block online-list">
+                            <h3>Who is online</h3>				<p>
+                                In total there is <strong>1</strong> user online :: 0 registered, 0 hidden and 1 guest<br><span class="dimmed">based on users active over the past 5 minutes</span><br><br>Most users ever online was <strong>51</strong> on 11 Apr 2017, 10:11<br><br>Registered users: No registered users
+                                <br>Legend: <a style="color:#AA0000" href="./memberlist.php?style=6&amp;mode=group&amp;g=5">Administrators</a>, <a style="color:#00AA00" href="./memberlist.php?style=6&amp;mode=group&amp;g=4">Global moderators</a>, <span style="color:#9E8DA7">Bots</span>, <a href="./memberlist.php?style=6&amp;mode=group&amp;g=2">Registered users</a>
+                            </p>
+                        </div>
+
+                        <div class="stat-block footer-block">
+                            <h3>Important links</h3><ul>
+                                <li>
+                                    <a href="#">Our Rules</a>
+                                </li>
+                                <li>
+                                    <a href="#">Frequently Asked Questions</a>
+                                </li>
+                                <li>
+                                    <a href="#">BBCode Examples</a>
+                                </li>
+                                <li>
+                                    <a href="#">Empty Link</a>
+                                </li>
+                                <li>
+                                    <a href="#">Creating an account</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="stat-block footer-block">
+                            <h3>About us</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-block statistics">
+                        <p>
+                            <span>Total posts <strong>156</strong></span><span>Total topics <strong>26</strong></span><span>Total members <strong>1458</strong></span><span>Our newest member <strong><a href="./memberlist.php?style=6&amp;mode=viewprofile&amp;u=1526" class="username">fojmyti</a></strong></span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
 
 
             <a id="start_here" class="anchor"></a>
@@ -643,20 +702,20 @@
 
     </script>
     @RenderSection("scripts", required: false)
-    <script type="text/javascript" src="~/Content/js/collapsiblecategories.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/collapsiblecategories.js?assets_version=174"></script>
 
-    <script type="text/javascript" src="~/Content/js/boardannouncements.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/boardannouncements.js?assets_version=174"></script>
 
-    <script type="text/javascript" src="~/Content/js/core.min.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/core.min.js?assets_version=174"></script>
 
-    <script type="text/javascript" src="~/Content/js/forum_fn.min.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/forum_fn.min.js?assets_version=174"></script>
 
-    <script type="text/javascript" src="~/Content/js/ajax.min.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/ajax.min.js?assets_version=174"></script>
 
-    <script type="text/javascript" src="~/Content/js/bootstrap.min.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/bootstrap.min.js?assets_version=174"></script>
 
-    <script type="text/javascript" src="~/Content/js/chosen.jquery.min.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/chosen.jquery.min.js?assets_version=174"></script>
 
-    <script type="text/javascript" src="~/Content/js/jquery.sticky.min.js?assets_version=174"></script>
+    <script type="text/javascript" src="~/content/js/jquery.sticky.min.js?assets_version=174"></script>
 </body>
 </html>

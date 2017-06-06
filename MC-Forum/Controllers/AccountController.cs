@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MC_Forum.Models;
+using System.Web.Security;
 
 namespace MC_Forum.Controllers
 {
@@ -50,7 +51,16 @@ namespace MC_Forum.Controllers
         {
             using (OurDbContext db = new OurDbContext())
             {
-                var usr = db.UserAccount.Single(u => u.Username == user.Username && u.Password == user.Password);
+                UserAccount usr = null;
+                try
+                {
+                    usr = db.UserAccount.Single(u => u.Username == user.Username && u.Password == user.Password);
+                }
+
+                catch (Exception e)
+                {
+
+                }
                 if (usr != null)
                 {
                     Session["UserID"] = usr.UserID.ToString();
@@ -76,6 +86,19 @@ namespace MC_Forum.Controllers
             {
                 return View("Login");
             }
+        }
+
+        public ActionResult Profile()
+        {
+
+            return View();
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon(); // it will clear the session at the end of request
+            return RedirectToAction("Index", "Home");
         }
     }
 }
