@@ -1,109 +1,43 @@
-﻿@model MC_Forum.Models.UserAccount
+﻿@model MC_Forum.Models.Post
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Submit Post";
 }
 
-<h2>Login</h2>
-
-<link href="~/Content/css/" rel="stylesheet" />
+<link href="~/Content/css/submit_post.css" rel="stylesheet" />
 <div class="container">
     <div class="row">
         <h4>Post a Job</h4>
         <div class="col col-md-2"></div>
         <div class="col col-md-8">
-            <form>
+            @using (Html.BeginForm())
+            {
                 <div class="form-group required">
-                    <label for="exampleInputEmail1" class='control-label'>Job Title</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: Senior Mobile Developer">
-                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-                </div>
-                <div class="form-group required">
-                    <label for="exampleInputPassword1" class='control-label'>Location</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ex:Hyderabad">
+                    <label class="control-label">Post Title:</label>
+                    @Html.EditorFor(model => model.PostTitle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PostTitle, "", new { htmlAttributes = new { @class = "text-danger"}})
                 </div>
                 <div class="form-group required">
-                    <label for="exampleSelect1" class='control-label'>Job Type</label>
-                    <select class="form-control" id="exampleSelect1">
-                        <option>Regular</option>
-                        <option>Work From Home</option>
-                        <option>May be Both</option>
-                    </select>
+                    <label for="" class='control-label'>Post Body:</label>
+                    @Html.TextAreaFor(model => model.PostBody, 10, 20, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.PostBody, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group required">
-                    <label for="exampleSelect1" class='control-label'>Is Part Time Allowed ?</label>
-                    <select class="form-control" id="exampleSelect1">
-                        <option>Yes</option>
-                        <option>No</option>
-                    </select>
-                </div>
-                <div class="form-group required">
-                    <label for="exampleTextarea" class='control-label'>Intern Responsibilities</label>
-                    <textarea class="form-control" id="exampleTextarea" rows="7"></textarea>
-                </div>
-                <div class="form-group required">
-                    <label for="exampleSelect1" class='control-label'>Salary</label>
-                    <select class="form-control" id="exampleSelect1">
-                        <option>0</option>
-                        <option>0-5k</option>
-                        <option>5k-10k</option>
-                        <option>Negotiable</option>
-                    </select>
-                </div>
-                <div class="form-group required">
-                    <label for="exampleInputPassword1" class='control-label'>Skills</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ex:Web Development, Java, .Net">
-                </div>
-                <div class="form-group required">
-                    <label for="exampleInputEmail1" class='control-label'>Education Details</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ex: B.Tech, No need of Education Degree">
-                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-                </div>
-
-                <div class="form-group required">
-                    <label for="exampleInputPassword1" class='control-label'>After Internship Completion</label>
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> Certificate
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"> Letter of Recommendation
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline disabled">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-                        </label>
-                    </div>
-                </div>
-
-                <hr size="1">
-                <div class="form-group required">
-                    <label for="exampleInputPassword1" class='control-label'>Company Name</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ex:Infosys">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputFile">Company Logo</label>
-                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                    <!--<small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>-->
-                </div>
-                <div class="form-group required">
-                    <label for="exampleTextarea" class='control-label'>Company Website</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="www.google.com">
-                </div>
-                <div class="form-group required">
-                    <label for="exampleTextarea" class='control-label'>Company Details</label>
-                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                </div>
+                <hr size="5">
                 <ul class="media-date text-uppercase reviews list-inline">
-                    <li class="mm"><button type="submit" class="btn btn-primary">Save Draft</button></li>
-                    <li class="mm"><button type="submit" class="btn btn-primary">Preview</button></li>
+                    @*<li class="mm"><button type="submit" class="btn btn-primary">Save Draft</button></li>
+                    <li class="mm"><button type="submit" class="btn btn-primary">Preview</button></li>*@
                     <li class="aaaa"><button type="submit" class="btn btn-success">Publish</button></li>
                 </ul>
-            </form>
+            }
         </div>
+        @*<div class="form-group">
+            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", placeholder = "username" } })
+            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "password" } })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>*@
         <div class="col col-md-2"></div>
     </div>
 </div>

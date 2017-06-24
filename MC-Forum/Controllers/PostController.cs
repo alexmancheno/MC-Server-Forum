@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MC_Forum.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,35 @@ namespace MC_Forum.Controllers
         public ActionResult Submit_Post()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Submit_Post(Post post)
+        {
+
+            if (Session["UserId"] != null)
+            {
+                if (ModelState.IsValid)
+                {
+                    using (OurDbContext db = new OurDbContext())
+                    {
+                        post.ID = (int) Session["UserId"];
+                        db.Post.Add(post);
+                        db.SaveChanges();
+                    }
+                    ModelState.Clear();
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            else
+            {
+                return View("Login", "Account");
+            }
+
         }
     }
 }

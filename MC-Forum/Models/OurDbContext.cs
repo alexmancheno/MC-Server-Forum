@@ -9,5 +9,7 @@ namespace MC_Forum.Models
     public class OurDbContext : DbContext
     {
         public DbSet<UserAccount> UserAccount { get; set; }
+
+        public DbSet<Post> Post { get; set; }
     }
 }

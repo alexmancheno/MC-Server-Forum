@@ -115,9 +115,9 @@
     </script>
 
 </head>
-<body id="phpbb" class="nojs notouch section-index ltr " style="padding: 0px 0px; margin-top: 0px;">
-    <div id="wrap" >
-        <div id="wrap-inner" >
+<body id="" class="nojs notouch section-index ltr ">
+    <div id="wrap">
+        <div id="wrap-inner">
             <a id="top" class="anchor" accesskey="t"></a>
             <div id="wrap-header-index" style="background-color: #455a64">
                 <div class="site-header chunk">
@@ -324,8 +324,12 @@
                     </nav>
                 </div>
             </div>
-
-            @RenderBody()
+            
+            
+            <div id="render-body" style="display:block">
+                @RenderBody()
+            </div>
+            
 
             <div class="background-deep">
                 <div class="chunk">

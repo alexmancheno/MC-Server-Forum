@@ -63,7 +63,7 @@ namespace MC_Forum.Controllers
                 }
                 if (usr != null)
                 {
-                    Session["UserID"] = usr.UserID.ToString();
+                    Session["UserID"] = usr.ID.ToString();
                     Session["Username"] = usr.Username.ToString();
                     return RedirectToAction("Index", "Home");
                 }

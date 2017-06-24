@@ -135,7 +135,6 @@ textarea {
 
 #wrap-header-index-sticky-wrapper, #wrap-header-sticky-wrapper {
     left: 0;
-    position: absolute;
     right: 0;
     top: 0
 }
